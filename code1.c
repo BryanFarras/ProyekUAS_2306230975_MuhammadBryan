@@ -8,12 +8,12 @@
 
 // Struktur untuk menyimpan parameter aliran
 typedef struct {
-    double radius;       // Jari-jari pipa (m)
-    double length;       // Panjang pipa (m)
-    double viscosity;    // Viskositas dinamik (Pa.s)
-    double density;      // Densitas fluida (kg/m^3)
-    double pressure_drop; // Penurunan tekanan (Pa)
-    int n_points;        // Jumlah titik grid
+    double radius;       // (m)
+    double length;       // (m)
+    double viscosity;    // (Pa.s)
+    double density;      // (kg/m^3)
+    double pressure_drop; //(Pa)
+    int n_points;        
 } FlowParams;
 
 // Fungsi untuk menghitung profil kecepatan laminar
@@ -36,10 +36,10 @@ double calculate_reynolds(double velocity, FlowParams params) {
 double calculate_darcy_friction(double Re) {
     // Persamaan Colebrook-White (perkiraan)
     if (Re < 2300) {
-        return 64.0 / Re;  // Aliran laminar
+        return 64.0 / Re; 
     } else {
         // Perkiraan untuk aliran turbulen (Haaland equation)
-        double roughness = 0.000015; // Kekasaran relatif (untuk pipa halus)
+        double roughness = 0.000015; // Kekasaran relatif
         return 1.0 / pow(-1.8 * log10(pow(roughness/3.7, 1.11) + 6.9/Re), 2);
     }
 }
