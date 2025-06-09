@@ -1,5 +1,8 @@
 # **Analisis Aliran Fluida dalam Pipa Menggunakan Metode Beda Hingga**
-
+```
+Muhammad Bryan Farras
+2306230975
+```
 ## **Deskripsi**
 
 Program ini melakukan analisis aliran fluida dalam pipa dengan menggunakan metode numerik **beda hingga**. Program ini menghitung kecepatan aliran untuk dua jenis aliran:
